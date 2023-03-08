@@ -118,5 +118,21 @@
 			}
 
 		}
+		
+		public function Del($id)
+		{
+			$query = "DELETE FROM vitri WHERE Id = '$id'";
+			$result = $this->database->delete($query);
+			if ($result)
+			{
+				$msg = "Xóa thành công";
+				return $msg;
+			}
+			else
+			{
+				$msg = "Xóa thất bại";
+				return $msg;
+			}
+		}
 	}
 ?>
