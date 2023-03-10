@@ -22,7 +22,7 @@
             <a href="../View/ViTriIndex.php">Vị trí</a>
           </li>
           <li>
-            <a href="#">sdf123123</a>
+            <a href="../View/NhanVienIndex.php">Nhân Viên</a>
           </li>
           <li class="CollapseMenu">
             <a href="#homeSubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Home<span class="fa fa-chevron-down"></span></a>
