@@ -8,7 +8,7 @@
 
 <div class="ViTriIndex">
 <div id="addViTri">
-	<a href="ViTriAdd.php" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: bold; text-align: center; text-decoration: none; background-color: white; color: black; border-radius: 0.25rem ; border: 1px solid black; cursor: pointer;">
+	<a href="NhanVienAdd.php" style="display: inline-block; padding: 0.5rem 1rem; font-size: 1rem; font-weight: bold; text-align: center; text-decoration: none; background-color: white; color: black; border-radius: 0.25rem ; border: 1px solid black; cursor: pointer;">
 		Thêm nhân viên
 	</a>
 </div>
@@ -52,7 +52,7 @@
     <td><?php echo $result['Email'] ?></td>
 	<td><?php echo $result['IdViTri'] ?></td>
 	<td>
-		<a href="ViTriEdit.php?ViTriId=<?php echo $result['Id'] ?>">Sửa</a> || <a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a>
+		<a href="NhanVienEdit.php?NhanVienId=<?php echo $result['Id'] ?>">Sửa</a> || <a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a>
 	</td>
 	</tr>
 	<?php 

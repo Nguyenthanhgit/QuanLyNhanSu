@@ -15,25 +15,63 @@
 			$this->format = new Format();
 		}
 		
-		public function Create($ten, $luongCoBan, $capDo)
+		public function Create($hoVaTen, $ten, $soDienThoai, $email, $idViTri, $taiKhoan, $matKhau)
 		{
-			if (empty($ten) || empty($luongCoBan) || empty($capDo))
+			if (empty($hoVaTen) || empty($ten) || empty($soDienThoai) || empty($email) || empty($idViTri) || empty($taiKhoan) || empty($matKhau))
 			{
 				$msg = "Cac thanh phan khong duoc bo trong!";
 				return $msg;
 			}
 			
+			$hoVaTen = $this->format->validation($hoVaTen);
 			$ten = $this->format->validation($ten);
-			$luongCoBan = $this->format->validation($luongCoBan);
-			$capDo = $this->format->validation($capDo);
+			$soDienThoai = $this->format->validation($soDienThoai);
+			$email = $this->format->validation($email);
+			$idViTri = $this->format->validation($idViTri);
+			$taiKhoan = $this->format->validation($taiKhoan);
+			$matKhau = $this->format->validation($matKhau);
 			
 			
 			$ten = mysqli_real_escape_string($this->database->link, $ten);
-			$luongCoBan = mysqli_real_escape_string($this->database->link, $luongCoBan);
-			$capDo = mysqli_real_escape_string($this->database->link, $capDo);
+			$hoVaTen = mysqli_real_escape_string($this->database->link, $hoVaTen);
+			$soDienThoai = mysqli_real_escape_string($this->database->link, $soDienThoai);
+			$email = mysqli_real_escape_string($this->database->link, $email);
+			$idViTri = mysqli_real_escape_string($this->database->link, $idViTri);
+			$taiKhoan = mysqli_real_escape_string($this->database->link, $taiKhoan);
+			$matKhau = mysqli_real_escape_string($this->database->link, $matKhau);
 			
-			$query = "INSERT INTO vitri(Ten, LuongCoBan, CapDo) VALUE ('$ten', '$luongCoBan', '$capDo')";
+			$check = "SELECT * FROM vitri WHERE Id = '$idViTri'";
+			$result = $this->database->select($check);
+			if ($result->num_rows <= 0)
+			{
+				$msg = "Không tồn tại vị trí";
+				return $msg;
+			}
+			
+			$check = "SELECT * FROM taikhoannhanvien WHERE TaiKhoan = '$taiKhoan'";
+			$result = $this->database->select($check);
+			if (!is_bool($result))
+			{
+				$msg = "Tài khoản đã tồn tại";
+				return $msg;
+			}
+			
+			$query = "INSERT INTO nhanvien(IdViTri, HoVaTenDem, Ten, SoDienThoai, Email) VALUE ('$idViTri', '$hoVaTen', '$ten', '$soDienThoai', '$email')";
 			$result = $this->database->insert($query);
+			
+			$query = "SELECT * FROM nhanvien ORDER BY id DESC LIMIT 1";
+			$result = $this->database->select($query);
+			if ($result->num_rows > 0)
+			{
+				$nhanVien = $result->fetch_assoc();
+				
+				$date = date("Y-m-d H:i:s");
+				$idNhanVien = $nhanVien['Id'];
+				$query = "INSERT INTO taikhoannhanvien(IdNhanVien, TaiKhoan, MatKhau, LanDangNhapCuoi) VALUE ('$idNhanVien', '$taiKhoan', '$matKhau', '$date')";
+				$result = $this->database->insert($query);
+			}
+			
+			
 			if ($result)
 			{
 				$msg = "Thêm thành công";
