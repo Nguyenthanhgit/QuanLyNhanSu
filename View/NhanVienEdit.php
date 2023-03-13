@@ -22,7 +22,7 @@
 		$taiKhoan = $_POST['taiKhoan'];
 		$matKhau = $_POST['matKhau'];
 		
-		$sua = $class->Create($hoVaTen, $ten, $soDienThoai, $email, $idViTri, $taiKhoan, $matKhau);
+		$sua = $class->Update($id, $hoVaTen, $ten, $soDienThoai, $email, $idViTri, $taiKhoan, $matKhau);
 	}
 ?>
 <div class="ViTriAdd" style="text-align: center; font-weight: bold; font-size: 25px;">

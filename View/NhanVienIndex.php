@@ -4,6 +4,12 @@
 ?>
 <?php
 	$class = new NhanVienController();
+	
+	if (isset($_GET['XoaId']))
+	{
+		$id = $_GET['XoaId'];
+		$result = $class->Del($id);
+	}
 ?>
 
 <div class="ViTriIndex">
