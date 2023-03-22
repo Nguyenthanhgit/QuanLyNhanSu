@@ -57,7 +57,7 @@
     <td><?php echo $result['LuongCoBan']; ?></td>
 	<td><?php echo $result['CapDo']; ?></td>
 	<td>
-		<a href="ViTriEdit.php?ViTriId=<?php echo $result['Id'] ?>">Sửa</a> || <a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a>
+		<a href="ViTriEdit.php?ViTriId=<?php echo $result['Id'] ?>">Sửa</a> || <a onClick="window.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a>
 	</td>
 	</tr>
 	<?php 

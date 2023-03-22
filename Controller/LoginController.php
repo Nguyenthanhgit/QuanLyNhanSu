@@ -11,6 +11,9 @@
 		private $database;
 		private $format;
 		
+		private $nhanVienController;
+		private $viTriController;
+		
 		public function __construct()
 		{
 			$this->database = new Database();
@@ -33,12 +36,24 @@
 			
 			$query = "SELECT * FROM taikhoannhanvien WHERE TaiKhoan = '$user' AND MatKhau = '$password' LIMIT 1";
 			$result = $this->database->select($query);
+			
+			
+			
 			if ($result != false)
 			{
 				$value = $result->fetch_assoc();
+				
+				$userId = $value['Id'];
+				$queryViTri = "SELECT vitri.* FROM taikhoannhanvien JOIN nhanvien ON taikhoannhanvien.IdNhanVien = nhanvien.Id JOIN vitri ON nhanvien.IdViTri = vitri.Id WHERE taikhoannhanvien.Id = '$userId'";
+				$viTri = $this->database->select($queryViTri)->fetch_assoc();
+				
 				Session::set('login', true);
-				Session::set('userId', $value['Id']);
+				Session::set('userId', $userId);
 				Session::set('userAccount', $value['TaiKhoan']);
+				Session::set('capDo', $viTri['CapDo']);
+				
+				
+				
 				header('Location:Index.php');
 			}
 			else
