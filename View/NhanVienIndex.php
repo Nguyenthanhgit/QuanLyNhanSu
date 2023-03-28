@@ -58,7 +58,9 @@
     <td><?php echo $result['Email'] ?></td>
 	<td><?php echo $result['IdViTri'] ?></td>
 	<td>
-		<a href="NhanVienEdit.php?NhanVienId=<?php echo $result['Id'] ?>">Sửa</a> || <a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a>
+		<a href="NhanVienEdit.php?NhanVienId=<?php echo $result['Id'] ?>">Sửa</a> || 
+		<a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a> || 
+		<a href="">Chấm công</a>
 	</td>
 	</tr>
 	<?php 
