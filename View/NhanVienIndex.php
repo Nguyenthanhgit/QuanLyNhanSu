@@ -60,7 +60,7 @@
 	<td>
 		<a href="NhanVienEdit.php?NhanVienId=<?php echo $result['Id'] ?>">Sửa</a> || 
 		<a onClick="return.confirm('Bạn muốn xóa chứ?')" href="?XoaId=<?php echo $result['Id'] ?>">Xóa</a> || 
-		<a href="">Chấm công</a>
+		<a href="ChamCongIndex.php?NhanVienId=<?php echo $result['Id'] ?>">Chấm công</a>
 	</td>
 	</tr>
 	<?php 

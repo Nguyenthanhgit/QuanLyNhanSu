@@ -11,10 +11,19 @@ Class Database{
  
    public $link;
    public $error;
+
+   private static $instance;
  
- public function __construct(){
+ private function __construct(){
   $this->connectDB();
  }
+
+ public static function getInstance() {
+  if (!isset(self::$instance)) {
+    self::$instance = new self();
+  }
+  return self::$instance;
+}
  
 private function connectDB(){
    $this->link = new mysqli($this->host, $this->user, $this->pass, 

@@ -45,6 +45,13 @@
 		</div>
       </form>
     </div>
+	<div class="button-container">
+		<a href="Profile.php?NhanVienId=<?php echo $userId ?>" class="button">Thông tin</a>
+  		<a href="#" class="button">Đơn hàng</a>
+  		<a href="#" class="button">KPI</a>
+  		<a href="#" class="button">Nghỉ phép</a>
+  		<a href="#" class="button">Chấm công</a>
+	</div>
 	<script>
 		function updateTime() {
 			var clockElement = document.getElementById("clock");

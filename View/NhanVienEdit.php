@@ -1,11 +1,11 @@
 <?php include '../View/inc/Header.php'; ?>
-<?php include'../Controller/NhanVienController.php' ?>
+<?php include '../Controller/NhanVienController.php'; ?>
 <?php
 	$class = new NhanVienController();
 	
 	if (!isset($_GET['NhanVienId']) || $_GET['NhanVienId'] == NULL)
 	{
-		echo "<script>window.location='ViTriIndex.php'</script>";
+		echo "<script>window.location='NhanVienIndex.php'</script>";
 	}
 	else
 	{

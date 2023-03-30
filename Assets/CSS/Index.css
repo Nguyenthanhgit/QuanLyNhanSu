@@ -63,7 +63,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 .form-container form {
@@ -171,4 +171,111 @@ body{
 
       .ViTriAdd button[type="submit"]:hover {
         background-color: #3e8e41;
+      }
+      
+      .button-container {
+        text-align: center;
+      }
+      
+      .button {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .profile .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .profile .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      
+      .profile .edit-profile-img-btn {
+        display: none;
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+      }
+      
+      .profile .profile-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 400px;
+      }
+      
+      .profile .info-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+      
+      .profile label {
+        width: 100px;
+      }
+      
+      .profile span {
+        margin-left: 10px;
+        width: 100%;
+      }
+      
+      .profile input {
+        margin-left: 10px;
+        width: 100%;
+        display: none;
+      }
+      
+      .profile .edit-save-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+      
+      .profile .edit-btn {
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      
+      .profile .save-btn {
+        display: none;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .profile .editing {
+        display: flex;
+      }
+      
+      .profile .editing span {
+        display: none;
+      }
+      
+      .profile .editing input {
+        display: block;
       }

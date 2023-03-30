@@ -1,6 +1,6 @@
 <?php
 	include '../Model/database.php';
-	include'../Model/format.php';
+	include '../Model/format.php';
 ?>
 
 <?php
@@ -11,7 +11,7 @@
 		
 		public function __construct()
 		{
-			$this->database = new Database();
+			$this->database = Database::getInstance();
 			$this->format = new Format();
 		}
 		
@@ -49,6 +49,13 @@
 				$msg = "asd";
 				return $msg;
 			}
+		}
+
+		public function GetChamCong($idNhanVien)
+		{
+			$query = "SELECT * FROM chamcong WHERE IdNhanVien = '$idNhanVien'";
+			$result = $this->database->select($query);
+			return $result;
 		}
 	}
 ?>

@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="../Assets/CSS/Index.css" rel="stylesheet">
+	  <link href="../Assets/CSS/Index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -18,7 +18,7 @@
 		<div class="Sidebar">
         <ul class="Components">
           <li>
-            <p><?php echo Session::get('userAccount') ?></p>
+            <p><a href="./Index.php"><?php echo Session::get('userAccount') ?></a></p>
           </li>
 		  <?php
 				if (Session::get('capDo') == 1)
@@ -29,20 +29,6 @@
           </li>
           <li>
             <a href="../View/NhanVienIndex.php">Nhân viên</a>
-          </li>
-          <li class="CollapseMenu">
-            <a href="#homeSubmenu" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false">Home<span class="fa fa-chevron-down"></span></a>
-            <ul class="collapse" id="homeSubmenu">
-              <li>
-                <a href="#">qweqwe</a>
-              </li>
-              <li>
-                <a href="#">sdf123123</a>
-              </li>
-              <li>
-                <a href="#">sdf123123</a>
-              </li>
-            </ul>
           </li>
 		  <?php
 				}
