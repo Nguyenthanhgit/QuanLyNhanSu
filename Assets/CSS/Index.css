@@ -1,0 +1,281 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+.Sidebar{
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  background-color: yellow;
+}
+.Components{
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  list-style-type: none;
+}
+.Components li{
+  border-bottom: 1px solid black;
+}
+.Components p{
+  text-align: center;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.Components a{
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.Components a span{
+  float: right;
+}
+.Components a:link{
+  text-decoration: none;
+  color: black;
+}
+.Components a:hover:not(.Active){
+  background-color: #555;
+  color: white;
+}
+.Components .CollapseMenu ul{
+  list-style-type: none ;
+  margin: 0;
+  padding: 0;
+}
+.Components .CollapseMenu li{
+  border: none;
+}
+.RightWrapper{
+  margin-left: 200px;
+}
+.Content{
+	padding: 20px;
+}
+
+/*Main index*/
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.form-container form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: yellow;
+}
+
+.form-container .form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-container label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.form-container input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-row button{
+	display: inline-block;
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+/*Vi tri*/
+ .ViTriIndex #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ .ViTriIndex #customers td, #customers th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.ViTriIndex #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.ViTriIndex #customers tr:hover {background-color: #ddd;}
+
+.ViTriIndex #customers .TableHead th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+.ViTriIndex #customers .Search th{
+	border: none;
+    text-align: center;
+}
+.ViTriIndex #addViTri{
+	margin-bottom: 20px;
+}
+
+/*Vi tri add*/
+	.ViTriAdd form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+      }
+
+      .ViTriAdd label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .ViTriAdd input, select {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      .ViTriAdd button[type="submit"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+
+      .ViTriAdd button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+      .button-container {
+        text-align: center;
+      }
+      
+      .button {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .profile .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      .profile .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+      
+      .profile .edit-profile-img-btn {
+        display: none;
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+      }
+      
+      .profile .profile-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 400px;
+      }
+      
+      .profile .info-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+      
+      .profile label {
+        width: 100px;
+      }
+      
+      .profile span {
+        margin-left: 10px;
+        width: 100%;
+      }
+      
+      .profile input {
+        margin-left: 10px;
+        width: 100%;
+        display: none;
+      }
+      
+      .profile .edit-save-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+      
+      .profile .edit-btn {
+        background-color: transparent;
+        border: none;
+        color: blue;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      
+      .profile .save-btn {
+        display: none;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .profile .editing {
+        display: flex;
+      }
+      
+      .profile .editing span {
+        display: none;
+      }
+      
+      .profile .editing input {
+        display: block;
+      }
